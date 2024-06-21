@@ -160,22 +160,13 @@ ul li span:hover {
 
 /* Responsive */
 
-@media (max-width: 1200px) {
-    html {
-        font-size: 55%;
-    }
-}
+@media (max-width: 1200px) {}
 
 @media (max-width: 991px) {}
 
 
 
-@media (max-width: 768px) {
-    form {
-        min-width: 300px;
-        max-width: 350px;
-    }
-}
+@media (max-width: 768px) {}
 
 @media (max-width: 617px) {}
 
