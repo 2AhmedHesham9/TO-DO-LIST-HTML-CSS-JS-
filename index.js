@@ -8,8 +8,15 @@ function addTask() {
     }
     else {
         let chunks = [];
-        for (let i = 0; i < inputBox.value.length; i += 45) {
-            chunks.push(inputBox.value.substring(i, i + 45));
+        for (let i = 0; i < inputBox.value.length; i += 40) {
+            if (inputBox.value.length - i > 40) {
+
+                chunks.push(inputBox.value.substring(i, i + 40));
+            }
+            else {
+                chunks.push(inputBox.value.substring(i, inputBox.value.length))
+                break;
+            }
         }
         let formattedText = chunks.join('<br>');
         let li = document.createElement('li');
