@@ -3,15 +3,22 @@ const ListContainer = document.getElementById('list-container');
 
 // ListContainer.remove();
 function addTask() {
-    if (inputBox.value === '' || !isNaN(inputBox.value)) {
+    if (inputBox.value === '' || inputBox.value.trim().length === 0) {
         alert('You must Write a task!')
     }
     else {
+        let chunks = [];
+        for (let i = 0; i < inputBox.value.length; i += 45) {
+            chunks.push(inputBox.value.substring(i, i + 45));
+        }
+        let formattedText = chunks.join('<br>');
         let li = document.createElement('li');
-        li.innerHTML = inputBox.value;
+        li.innerHTML = formattedText;
+
         ListContainer.appendChild(li);
         let span = document.createElement('span');
         span.innerHTML = "\u00d7";
+
         // let editBtn = document.createElement('button');
         // editBtn.innerHTML = "Edit";
         // li.appendChild(editBtn);
